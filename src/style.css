@@ -1,3 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  color: red;
+  background-color: #fff;
+}
+
+footer {
+  width: 95%;
+  margin: auto;
+  border-radius: 3px;
+  border-width: thick;
+  border-style: solid;
+  height: 180px;
+}
+
+.footer-content {
+  width: 99.4%;
+  height: 102px;
+  border-width: thick;
+  border-style: solid;
+}
+
+.footer-content p {
+  font-size: 1.8rem;
+  padding-top: 30px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.footer-icon {
+  background-color: rgb(145, 146, 155);
+  border-width: thick;
+  border-style: solid;
+  height: 57.4px;
+  margin-bottom: 3px;
+  margin-left: 1px;
+  margin-right: 1px;
 }
