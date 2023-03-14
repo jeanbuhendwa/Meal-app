@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   padding: 0 10%;
   background: #fff;
+  margin-bottom: 10px;
 }
 
 #logo-nav {
@@ -36,6 +37,84 @@ body {
   font-size: 15px;
   line-height: 18px;
   font-weight: 600;
+}
+.container {
+
+  width: 100%;
+}
+
+.list-food {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-bar {
+  margin: 20px;
+}
+.nav-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.nav-item li {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  padding: 10px;
+}
+
+.link-breakfast,
+.link-pasta,
+.link-chicken {
+  cursor: pointer;
+}
+
+.food-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.food-card {
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.food-img img {
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.food-title {
+  text-align: center;
+}
+
+.reactions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 10px;
+}
+
+.comments {
+  background-color: #ca3030;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 footer {
@@ -69,4 +148,26 @@ footer {
   margin-bottom: 3px;
   margin-left: 1px;
   margin-right: 1px;
+}
+@media screen and (min-width: 768px) {
+  header {
+    gap: 150px;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    border-width: thin;
+    border-style: solid;
+  }
+
+  .nav-item {
+    gap: 100px;
+  }
+
+  .food-container {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 30px;
+  }
 }
