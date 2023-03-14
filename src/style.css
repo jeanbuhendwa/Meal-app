@@ -22,11 +22,12 @@ body {
   padding: 10px;
   border-radius: 100%;
   background: #4e6961;
-  color: #F2E8DF;
+  color: #f2e8df;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -1px;
 }
+
 .list-menu {
   display: flex;
   gap: 15px;
