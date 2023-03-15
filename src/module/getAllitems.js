@@ -1,4 +1,4 @@
-import commentPop from './commentPop.js';
+import { commentPop, renderComments } from './commentPop.js';
 import { newLikes, getLikes } from './getLikes.js';
 
 const displayitems = (element) => {
@@ -41,6 +41,7 @@ const displayitems = (element) => {
       const response = await fetch(url);
       const data = await response.json();
       commentPop(data);
+      renderComments(data);
     });
   });
 };
@@ -48,7 +49,7 @@ const displayitems = (element) => {
 export const itemCounter = (selected, item) => {
   selected.innerHTML = `${selected.textContent} (${item})`;
 };
-  // Get item from API's
+// Get item from API's
 const getListitems = async (selected, url) => {
   const request = new Request(url);
   const response = await fetch(request);
