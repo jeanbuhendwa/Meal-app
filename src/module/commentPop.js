@@ -5,6 +5,9 @@ const renderComments = async (meal) => {
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/C9lShWLme7eYfRxz4vXQ/comments?item_id=${meal.meals[0].idMeal}`,
   );
   const comments = await response.json();
+  const commentsCount = comments.length;
+  const commentsHeader = document.querySelector('.food-comment h3');
+  commentsHeader.textContent = `Comments (${commentsCount})`;
   comments.forEach((comment) => {
     const li = document.createElement('li');
     li.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
