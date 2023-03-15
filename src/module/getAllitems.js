@@ -30,12 +30,17 @@ const displayitems = (element) => {
     fooditem.appendChild(div);
   });
 };
+// All items counter for homepage
+export const itemCounter = (selected, item) => {
+  selected.innerHTML = `${selected.textContent} (${item})`;
+};
   // Get item from API's
 const getListitems = async (selected, url) => {
   const request = new Request(url);
   const response = await fetch(request);
   const data = await response.json();
   const data1 = data.meals;
+  itemCounter(selected, data1.length);
   displayitems(data1);
 };
 
