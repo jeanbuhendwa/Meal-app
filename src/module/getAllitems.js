@@ -1,4 +1,5 @@
 import commentPop from './commentPop.js';
+import { newLikes, getLikes } from './getLikes.js';
 
 const displayitems = (element) => {
   const fooditem = document.querySelector('.food-container');
@@ -12,9 +13,23 @@ const displayitems = (element) => {
               <h3 class="food-title">${e.strMeal}</h3>
               <div class="reactions">
               <button class="comments" id="${e.idMeal}">Coments</button>
-              <div class="likes"> Like </div>
+              <div class="likes"> </div>
              </div> `;
+    
+    const numOflikes = div.querySelector('.likes');
+    // counter for number of likes for each item
+    const likesCounter = (like) => {
+      const likesfound = like.find((element) => element.item_id === e.idMeal);
+      numOflikes.innerHTML = likesfound !== undefined ? `<i class="fa-solid fa-thumbs-up"></i>(${likesfound.likes}) Likes` : '<i class="fa-solid fa-thumbs-up"></i>(0) Likes';
+    };
+    getLikes().then(likesCounter);
 
+    // Add new likes event
+    numOflikes.addEventListener('click', () => {
+      newLikes(e.idMeal);
+      getLikes().then(likesCounter);
+    });
+    
     fooditem.appendChild(div);
 
     const commentBtn = div.querySelector('.comments');
@@ -27,14 +42,14 @@ const displayitems = (element) => {
     });
   });
 };
-// Get item data from the given API's
+
+  // Get item from API's
 const getListitems = async (selected, url) => {
   const request = new Request(url);
   const response = await fetch(request);
   const data = await response.json();
   const data1 = data.meals;
   displayitems(data1);
-  // commentPop(data);
 };
 
 export { getListitems as default };
