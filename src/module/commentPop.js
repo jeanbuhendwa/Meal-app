@@ -1,3 +1,20 @@
+const renderComments = async (meal) => {
+  const commentsList = document.querySelector('.food-comment ul');
+  commentsList.innerHTML = '';
+  const response = await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/C9lShWLme7eYfRxz4vXQ/comments?item_id=${meal.meals[0].idMeal}`,
+  );
+  const comments = await response.json();
+  const commentsCount = comments.length;
+  const commentsHeader = document.querySelector('.food-comment h3');
+  commentsHeader.textContent = `Comments (${commentsCount})`;
+  comments.forEach((comment) => {
+    const li = document.createElement('li');
+    li.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
+    commentsList.appendChild(li);
+  });
+};
+
 const commentPop = async (meal) => {
   const popContainer = document.getElementById('pop-container');
   popContainer.innerHTML = `
@@ -25,6 +42,39 @@ const commentPop = async (meal) => {
   closePop.addEventListener('click', () => {
     popContainer.style.display = 'none';
   });
+
+  const postComment = async (name, comment) => {
+    const response = await fetch(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/C9lShWLme7eYfRxz4vXQ/comments',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          item_id: meal.meals[0].idMeal,
+          username: name,
+          comment,
+        }),
+      },
+    );
+    if (!response.ok) {
+      throw new Error('Failed to post comment');
+    }
+  };
+
+  const commentForm = popContainer.querySelector('.form-input');
+  commentForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const nameInput = document.getElementById('name-user');
+    const commentInput = document.getElementById('comment-user');
+    const name = nameInput.value.trim();
+    const comment = commentInput.value.trim();
+    await postComment(name, comment);
+    renderComments(meal);
+    nameInput.value = '';
+    commentInput.value = '';
+  });
 };
 
-export default commentPop;
+export { commentPop, renderComments };
