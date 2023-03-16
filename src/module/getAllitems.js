@@ -47,7 +47,7 @@ const displayitems = (element) => {
 };
 // All items counter for homepage
 export const itemCounter = (selected, item) => {
-  selected.innerHTML = `${selected.textContent} (${item})`;
+  selected.innerHTML = `${selected.textContent.trim()} ${item}`;
 };
 // Get item from API's
 const getListitems = async (selected, url) => {
