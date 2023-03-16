@@ -21,8 +21,8 @@ const displayitems = (element) => {
     const likesCounter = (like) => {
       const likesfound = like.find((element) => element.item_id === e.idMeal);
       numOflikes.innerHTML = likesfound !== undefined
-        ? `<i class="fa-solid fa-thumbs-up"></i>(${likesfound.likes}) Likes`
-        : '<i class="fa-solid fa-thumbs-up"></i>(0) Likes';
+        ? `<i class="fa-solid fa-heart"></i>(${likesfound.likes}) Likes`
+        : '<i class="fa-solid fa-heart"></i>(0) Likes';
     };
     getLikes().then(likesCounter);
 
