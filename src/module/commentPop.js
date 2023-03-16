@@ -1,18 +1,20 @@
 const renderComments = async (meal) => {
   const commentsList = document.querySelector('.food-comment ul');
-  commentsList.innerHTML = '';
-  const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/C9lShWLme7eYfRxz4vXQ/comments?item_id=${meal.meals[0].idMeal}`,
-  );
-  const comments = await response.json();
-  const commentsCount = comments.length;
-  const commentsHeader = document.querySelector('.food-comment h3');
-  commentsHeader.textContent = `Comments (${commentsCount})`;
-  comments.forEach((comment) => {
-    const li = document.createElement('li');
-    li.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
-    commentsList.appendChild(li);
-  });
+  if (commentsList) {
+    commentsList.innerHTML = '';
+    const response = await fetch(
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6ab7Rja0wjBms3XH6H8j/comments?item_id=${meal.meals[0].idMeal}`,
+    );
+    const comments = await response.json();
+    const commentsCount = comments.length > 0 ? comments.length : 0;
+    const commentsHeader = document.querySelector('.food-comment h3');
+    commentsHeader.textContent = `Comments (${commentsCount})`;
+    comments.forEach((comment) => {
+      const li = document.createElement('li');
+      li.textContent = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
+      commentsList.appendChild(li);
+    });
+  }
 };
 
 const commentPop = async (meal) => {
@@ -45,7 +47,7 @@ const commentPop = async (meal) => {
 
   const postComment = async (name, comment) => {
     const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/C9lShWLme7eYfRxz4vXQ/comments',
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6ab7Rja0wjBms3XH6H8j/comments',
       {
         method: 'POST',
         headers: {
