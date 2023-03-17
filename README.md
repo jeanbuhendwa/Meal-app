@@ -67,9 +67,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Live Demo deploy soon.
-
-- [Live Demo Link]()
+- [Demo Video Outlines](https://drive.google.com/file/d/17GW-uFuncroC3aTtyRXP39xRp7tFBdza/view?usp=share_link)
+- [Live Demo Link](https://jeanbuhendwa.github.io/javascript-capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,7 +129,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd leaderboard
+  cd javascript-capstone
   npm install
 ```
 
@@ -175,6 +174,7 @@ Deployed using Github Pages.
 - GitHub: [@jeanbuhendwa](https://github.com/jeanbuhendwa)
 - Twitter: [@JeanjacqueI](https://twitter.com/JeanjacqueI)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/johnbuhendwa/)
+
   👤 **Brhanu Hailu**
 
 - GitHub: [@brhanuhailu](https://github.com/brhanuhailu)
@@ -216,7 +216,7 @@ If you like this project like it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-we would like to thank Microverse organization
+we would like to thank Microverse organization and the mealdb api owner. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
