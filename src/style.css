@@ -256,8 +256,8 @@ footer {
   .container {
     width: 80%;
     margin: 0 auto;
-    border-width: thin;
-    border-style: solid;
+    /* border-width: thin;
+    border-style: solid; */
   }
 
   .nav-item {
