@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2% 10%;
+  padding: 1% 10%;
   background: #fff;
   margin-bottom: 10px;
 }
@@ -50,6 +50,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0;
 }
 
 .nav-bar {
@@ -60,6 +61,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: row;
+  padding: 5px;
 }
 
 .nav-item li {
@@ -73,6 +75,8 @@ body {
 .link-breakfast,
 .link-safefood {
   cursor: pointer;
+  font-size: 20px;
+  padding: 0;
 }
 
 .food-container {
@@ -256,12 +260,10 @@ footer {
   .container {
     width: 80%;
     margin: 0 auto;
-    border-width: thin;
-    border-style: solid;
   }
 
   .nav-item {
-    gap: 100px;
+    gap: 10px;
   }
 
   .food-container {
