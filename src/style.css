@@ -75,7 +75,11 @@ body {
 .link-breakfast,
 .link-safefood {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #1d2824;
   padding: 0;
 }
 
