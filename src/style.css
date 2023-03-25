@@ -125,6 +125,11 @@ body {
   cursor: pointer;
 }
 
+.fa-heart {
+  color: rgb(176, 5, 5);
+  font-size: 20px;
+}
+
 /* Comments PopUp */
 .comment-popup {
   display: none;
