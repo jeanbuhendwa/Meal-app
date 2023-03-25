@@ -84,13 +84,20 @@ body {
 }
 
 .food-card {
-  border: 2px solid;
+  border: 2px solid #4e6961;
   border-radius: 10px;
+  padding: 2px;
+  height: 310px;
+  display: grid;
+  grid-template-rows: 65% 12% 18%;
+  gap: 5px;
+  box-shadow: 0 0 8px #4e6961;
 }
 
 .food-img img {
   width: 100%;
-  min-height: 250px;
+  height: 200px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
