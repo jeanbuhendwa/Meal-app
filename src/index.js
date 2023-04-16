@@ -11,7 +11,7 @@ let selected = '';
 const breakfasturl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast';
 const safefoodurl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 
-// Display the first navigation bar items when the page refreshs
+// Display the first navigation bar items 
 window.addEventListener('load', () => {
   selected = linkbreakfast;
   linksafefood.textContent = 'Light food';
