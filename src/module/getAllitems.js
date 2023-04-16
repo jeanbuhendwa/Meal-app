@@ -45,7 +45,7 @@ const displayitems = (element) => {
     });
   });
 };
-// All items counter for homepage
+// All items counter
 export const itemCounter = (selected, item) => {
   selected.innerHTML = `${selected.textContent.trim()} ${item}`;
 };
